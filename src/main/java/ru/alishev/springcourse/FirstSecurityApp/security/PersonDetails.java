@@ -3,6 +3,7 @@ package ru.alishev.springcourse.FirstSecurityApp.security;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import ru.alishev.springcourse.FirstSecurityApp.models.Person;
+import ru.alishev.springcourse.FirstSecurityApp.services.PersonDetailsService;
 
 import java.util.Collection;
 
@@ -20,31 +21,35 @@ public class PersonDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return null;
+        return this.person.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return this.person.getUsername();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
+    }
+
+    public Person getPerson() {
+        return this.person;
     }
 }
