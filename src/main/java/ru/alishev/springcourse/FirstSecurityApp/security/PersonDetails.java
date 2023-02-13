@@ -3,7 +3,6 @@ package ru.alishev.springcourse.FirstSecurityApp.security;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import ru.alishev.springcourse.FirstSecurityApp.models.Person;
-import ru.alishev.springcourse.FirstSecurityApp.services.PersonDetailsService;
 
 import java.util.Collection;
 
@@ -49,6 +48,7 @@ public class PersonDetails implements UserDetails {
         return true;
     }
 
+    // Нужно, чтобы получать данные аутентифицированного пользователя
     public Person getPerson() {
         return this.person;
     }
